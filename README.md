@@ -7,7 +7,6 @@
 Haplotype comparison workflow for running multiple vcf samples with [hap.py](https://github.com/Illumina/hap.py/).
 
 ![happy-snake dag](./.dag.svg)
-<img src="./.dag.svg">
 
 ## Instructions
 
