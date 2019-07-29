@@ -23,19 +23,21 @@ cd /path/to/happy-snake
 Edit the [samples.tsv](https://raw.githubusercontent.com/oskarvid/happy-snake/master/samples.tsv) file and enter the filename without the file ending in the `sample` column and the full file path in the `VCF` column. The file path is relative to the `happy-snake` directory. Only use tab spaces.  
 
 ### Download reference files
-The workflow has been tested with this hg38 reference file: ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/hg38/Homo_sapiens_assembly38.fasta.gz  
-If it asks for a password just hit okay, there is no password.  
-**You also need the gold standard vcf file, tbi index and bed interval file from here:**  
+The workflow has been tested with the hg38 reference file from here: ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/hg38/Homo_sapiens_assembly38.fasta.gz  
+You can download it with `wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/hg38/Homo_sapiens_assembly38.fasta.gz`  
+
+You also need the gold standard vcf file, tbi index and bed interval file from here:  
 ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/release/NA12878_HG001/NISTv3.3.2/GRCh38/  
+Put them in your references directory.  
 
 ### Preprocessing the reference files
 hap.py will do all preprocessing of your fasta file, just put it in the references directory. 
 
 ### Configuring the go.sh script
-If you want to use a different reference file directory than the default one, change the variable called `REFERENCES` in the `./scripts/go.sh` script and point it to your reference file directory. 
+If you want to use a different reference file directory than the default one, change the path in the variable called `REFERENCES` in the `./scripts/go.sh` script and point it to your reference file directory. 
 
 ### Editing the config.yaml file
 Edit the [config.yaml](https://raw.githubusercontent.com/oskarvid/happy-snake/master/config.yaml) file and change the file names, but don't change the `/references` file path because it refers to the mount point inside the container when the workflow is running.
 
 ### That's it!
-This should be all you need to do to get going using this workflow.  
+This should be all you need to do to get going using this workflow. Happy benchmarking!  
