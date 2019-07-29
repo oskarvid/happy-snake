@@ -4,7 +4,7 @@
 </h1>
 
 # happy snake
-Haplotype comparison workflow for running multiple vcf samples with [hap.py](https://github.com/Illumina/hap.py/).
+Haplotype comparison snakemake workflow for running multiple vcf samples with [hap.py](https://github.com/Illumina/hap.py/).
 
 ![happy-snake dag](./.dag.svg)
 
@@ -43,3 +43,10 @@ Edit the [config.yaml](https://raw.githubusercontent.com/oskarvid/happy-snake/ma
 
 ### That's it!
 This should be all you need to do to get going using this workflow. Happy benchmarking!  
+
+
+<details><summary>Docker image build instructions</summary>
+<p>
+The docker images was built by manually building the hap.py docker image by cloning the hap.py github repository, and then this manually built hap.py image was used as base image to build the snakemake docker image from the snakemake gitlabs repository. It's a bit hacky but there you go.
+</p>
+</details>
