@@ -1,0 +1,5 @@
+samples: 'samples.tsv'
+
+bed: "/references/tiny.bed"
+fasta: "/references/tiny.fasta.gz"
+truth: "/references/tiny-giab.vcf.gz"
