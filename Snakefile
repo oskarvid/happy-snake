@@ -8,40 +8,45 @@ configfile: 'config.yaml'
 # tsv file with names and paths to input files
 samples = config['samples']
 
+# Make Snakefile easier to work with by accepting any input fasta file name and 
+# automatically create output files based on the fasta file basename
+basename = config['fasta'].rsplit('.', -1)[0]
+
 # Create variables to select sample names, lane numbers and flowcell names from the sample.tsv file
 samples = pd.read_csv(samples, sep='\t', dtype=str).set_index(["sample", "VCF"], drop=False)
 samples.index = samples.index.set_levels([i.astype(str) for i in samples.index.levels]) # enforce str in index
 
 rule all:
   input:
-    expand("outputs/{samples}/{samples}_flag",
+    expand("Outputs/{samples}/{samples}_flag",
       samples=samples['sample']),
+    basename + '.fasta',
+    basename + '.sdf',
 
 rule unzip:
   input:
-    config['fasta'],
+    config['fasta']
   output:
-    "/references/hg38.fasta",
+    basename + '.fasta',
   shell:
     "zcat {input} > {output}"
 
 rule sdfCreation:
   input:
-    rules.unzip.output
+    config['fasta'],
   output:
-    directory = directory("/references/hg38.sdf"),
-    flag = temp(touch("/references/sdf-flag")),
+    directory(basename + '.sdf'),
   shell:
     "/opt/hap.py/libexec/rtg-tools-install/rtg \
     format \
-    -o {output.directory} \
+    -o {output} \
     {input}"
 
 rule fastaIndexing:
   input:
-    rules.unzip.output
+    rules.unzip.output,
   output:
-    "/references/hg38.fasta.fai",
+    basename + '.fasta.fai',
   shell:
     "/opt/hap.py/bin/samtools \
     faidx \
@@ -49,19 +54,18 @@ rule fastaIndexing:
 
 rule happy:
   input:
-    "/references/sdf-flag",
-    sdf = rules.sdfCreation.output.directory,
-    fai = rules.fastaIndexing.output,
-    fasta = rules.unzip.output,
-    truth = config['truth'],
-    bed = config['bed'],
     vcf = get_vcf,
+    bed = config['bed'],
+    truth = config['truth'],
+    fasta = rules.unzip.output,
+    sdf = rules.sdfCreation.output,
+    fai = rules.fastaIndexing.output,
   output:
-    flag = temp(touch("outputs/{samples}/{samples}_flag")),
+    flag = temp(touch("Outputs/{samples}/{samples}_flag")),
   threads:
     4
   params:
-    basename = "outputs/{samples}/{samples}_happy",
+    basename = "Outputs/{samples}/{samples}_happy",
   shell:
     "/opt/hap.py/bin/hap.py \
     --threads {threads} \

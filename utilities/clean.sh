@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rm -rf outputs/* .snakemake 
+rm -rf Outputs/* .snakemake

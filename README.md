@@ -33,7 +33,7 @@ ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/release/NA12878_HG001/NISTv3.3.2/GRCh3
 Put them in your references directory.  
 
 ### Preprocessing the reference files
-hap.py will do all preprocessing of your fasta file, just put it in the references directory. 
+hap.py will do all preprocessing of your fasta file, just put it in the references directory. If you have an already unzipped fasta file the workflow will skip this step.
 
 ### Configuring the go.sh script
 If you want to use a different reference file directory than the default one, change the path in the variable called `REFERENCES` in the `./scripts/go.sh` script and point it to your reference file directory. 
