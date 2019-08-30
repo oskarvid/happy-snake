@@ -1,12 +1,12 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/oskarvid/happy-snake"><img src="https://raw.githubusercontent.com/oskarvid/happy-snake/master/.logo.svg" alt="happy-snake" width="200"></a>
+  <a href="https://github.com/oskarvid/happy-snake"><img src="https://raw.githubusercontent.com/oskarvid/happy-snake/master/.logo.svg?sanitize=true" alt="happy-snake" width="200"></a>
 </h1>
 
 # happy snake
 Haplotype comparison snakemake workflow for running multiple vcf samples with [hap.py](https://github.com/Illumina/hap.py/).
 
-![happy snake dag](https://raw.githubusercontent.com/oskarvid/happy-snake/master/.dag.svg)
+![happy snake dag](https://raw.githubusercontent.com/oskarvid/happy-snake/master/.dag.svg?sanitize=true)
 
 ## Instructions
 
