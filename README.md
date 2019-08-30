@@ -6,7 +6,7 @@
 # happy snake
 Haplotype comparison snakemake workflow for running multiple vcf samples with [hap.py](https://github.com/Illumina/hap.py/).
 
-![happy-snake dag](https://raw.githubusercontent.com/oskarvid/happy_snake/master/.dag.svg)
+![happy-snake-dag](https://raw.githubusercontent.com/oskarvid/happy_snake/master/.dag.svg)
 
 ## Instructions
 
