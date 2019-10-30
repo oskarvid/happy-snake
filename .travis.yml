@@ -1,0 +1,10 @@
+sudo: required
+language: bash
+services: docker
+
+addons:
+  apt:
+    update: true
+
+# Actual tests
+script: "./scripts/go.sh"
