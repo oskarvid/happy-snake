@@ -26,7 +26,7 @@ die () {
 	inf "Exited on $(date)"
 	printf "[$(showdate)][INFO]: Duration: %dd:%dh:%dm:%ds\n" $((EXECTIME/86400)) $((EXECTIME%86400/3600)) $((EXECTIME%3600/60)) $((EXECTIME%60))
 	printf "#########################################\n"
-	exit 0
+	exit 1
 }
 
 # Run the workflow
