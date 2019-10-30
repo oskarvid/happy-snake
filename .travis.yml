@@ -1,10 +1,8 @@
-sudo: required
 language: bash
 services: docker
 
-addons:
-  apt:
-    update: true
+before_install:
+- docker pull oskarv/happy-snake snakemake:latest
 
 # Actual tests
 script: "./scripts/go.sh"
