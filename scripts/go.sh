@@ -33,7 +33,6 @@ die () {
 docker run \
 --rm \
 -ti \
--u $(id -u):$(id -g) \
 -v $REFERENCES:/references \
 -v $(pwd):/data \
 -w /data \
