@@ -3,6 +3,8 @@ services: docker
 
 before_install:
 - docker pull oskarv/happy-snake:latest
+- pwd
+- cd ~/
 
 # Actual tests
 script: "./scripts/go.sh"
