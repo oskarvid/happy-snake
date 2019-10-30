@@ -2,7 +2,7 @@ language: bash
 services: docker
 
 before_install:
-- docker pull oskarv/happy-snake snakemake:latest
+- docker pull oskarv/happy-snake:latest
 
 # Actual tests
 script: "./scripts/go.sh"
