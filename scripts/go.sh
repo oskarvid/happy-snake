@@ -29,6 +29,8 @@ die () {
 	exit 1
 }
 
+mkdir .snakemake
+
 # Run the workflow
 docker run \
 --rm \
