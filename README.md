@@ -3,8 +3,6 @@
   <a href="https://github.com/oskarvid/happy-snake"><img src="https://raw.githubusercontent.com/oskarvid/happy-snake/master/.logo.svg?sanitize=true" alt="Happy-Snake" width="200"></a>
 </h1>
 
-[![Travis Build Status](https://img.shields.io/travis/oskarvid/happy-snake.svg?logo=travis)](https://travis-ci.org/oskarvid/happy-snake)
-
 # Happy-Snake
 Haplotype comparison snakemake workflow for running multiple vcf samples with [hap.py](https://github.com/Illumina/hap.py/).
 
