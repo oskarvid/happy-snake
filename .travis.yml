@@ -4,7 +4,9 @@ python:
   - "3.6"
 
 before_install:
-- "wget http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz -O /references/tiny.fasta.gz"
+- "ls references"
+- "wget http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz -O references/tiny.fasta.gz"
+- "ls references"
 
 install:
   - sudo apt-get update
