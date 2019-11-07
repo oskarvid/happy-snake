@@ -6,7 +6,6 @@
 # Set default variables
 START=$(date +%s)
 DATE=$(date +%F.%H.%M.%S)
-REFERENCES=$(pwd)/references
 
 # Source file with various functions
 source utilities/functions.sh
@@ -36,7 +35,6 @@ docker run \
 --rm \
 -ti \
 -u 1000:1000 \
--v $REFERENCES:/references \
 -v $(pwd):/data \
 -w /data \
 oskarv/happy-snake snakemake -j -p
