@@ -1,3 +1,4 @@
 README.html
 .snakemake
 references/tiny.fasta.gz
+singularity/*.simg
