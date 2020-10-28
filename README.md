@@ -45,8 +45,5 @@ Edit the [config.yaml](https://raw.githubusercontent.com/oskarvid/happy-snake/ma
 This should be all you need to do to get going using this workflow. Happy benchmarking!  
 
 
-<details><summary>Docker image build instructions</summary>
-<p>
+### Docker image build instructions
 The docker image was built by manually building the [hap.py](https://github.com/Illumina/hap.py) docker image by cloning the hap.py github repository, and then this manually built hap.py image was used as base image to build the snakemake docker image from the [snakemake github repository](https://github.com/snakemake/snakemake). It's a bit hacky but there you go.
-</p>
-</details>
